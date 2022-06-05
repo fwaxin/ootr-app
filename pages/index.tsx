@@ -1,9 +1,12 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import useUser from "hooks/useUser";
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const { user } = useUser({});
+  console.log(user);
   return (
     <div className={styles.container}>
       <Head>
@@ -18,9 +21,30 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
+
+        {user && Object.keys(user as object).length > 0 ? (
+          <>
+            {user.avatar && (
+              <Image
+                alt={`avatar`}
+                src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
+                width={56}
+                height={56}
+              />
+            )}
+            <p>
+              Hello {user.username}#{user.discriminator} !
+            </p>
+            <a href="/api/auth/logout">Logout</a>
+          </>
+        ) : (
+          <a href="/api/auth/login" className={styles.description}>
+            Login with Discord
+          </a>
+        )}
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
@@ -59,14 +83,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
