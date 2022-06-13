@@ -2,11 +2,11 @@ import useUser from "hooks/useUser";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const { user } = useUser({});
-  console.log(user);
   return (
     <div className={styles.container}>
       <Head>
@@ -38,12 +38,12 @@ const Home: NextPage = () => {
             <p>
               Hello {user.username}#{user.discriminator} !
             </p>
-            <a href="/api/auth/logout">Logout</a>
+            <Link href="/api/auth/logout">Logout</Link>
           </>
         ) : (
-          <a href="/api/auth/login" className={styles.description}>
+          <Link href="/api/auth/login" className={styles.description}>
             Login with Discord
-          </a>
+          </Link>
         )}
 
         <div className={styles.grid}>
