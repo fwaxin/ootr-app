@@ -18,3 +18,10 @@ export type DiscordAPIResponse = {
   refresh_token?: string;
   scope?: string;
 }
+
+export type MenuRoute = {
+  name: string;
+  href?: string;
+  startIcon?: JSX.Element;
+  routes?: MenuRoute;
+}[]

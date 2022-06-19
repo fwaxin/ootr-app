@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { SWRConfig } from "swr";
 import fetchJson from "lib/fetchersJSON";
@@ -6,6 +5,7 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "lib/createEmotionCache";
 import Head from "next/head";
 import { CssBaseline } from "@mui/material";
+import Layout from "layouts/default";
 
 // Emotion client-side cache, shared for the whole user's session in the browser
 const clientSideEmotionCache = createEmotionCache();
@@ -33,7 +33,9 @@ const MyApp = ({
         }}
       >
         <CssBaseline />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </SWRConfig>
     </CacheProvider>
   );
