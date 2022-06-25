@@ -7,15 +7,15 @@ author: zorro275
 
 Here are all the settings that can be picked on seed generation along with their given impact on what to excpect on your aventure!
 
-## BKeysy
+## Boss Keys: Keysy
 
 All Boss keys are removed from the game, meaning that you can go directly to the dungeon's boss if you have this opportunity.
 
-## Bridge Conditions
+## Bridge Requirement
 
 Here are all the bridge conditions possible on Shuffle Ladder.
 
-### 3 stones
+### 3 Spiritual Stones
 
 In order to unlock access to the Trials, you have to gather all 3 Spiritual Stones of the seed :
 
@@ -30,17 +30,17 @@ As always, the required dungeons are hinted by checking the Temple of Time pedes
 In order to unlock access to the Trials, you will need a variable number of Medallions (between 3 and 5).
 The required number is given by checking the Temple of Time pedestal as adult.
 
-### Vanilla
+### Vanilla Requirements
 
 In order to unlock access to the Trials, you have to gather the Light Arrows along with the Spirit and Shadow Medallions.
 
 Important to notice : with this setting active, the Light Arrows' position will be added as an always hint and "Way of the Hero" hint are replaced by "Path of Bridge" hints.
 
-### Variable
+### Dungeon Rewards
 
 In order to unlock access to the Trials, you have to gather between 4 and 8 dungeons rewards (doesn't matter if the reward is a Spiritual Stone or a Medallion). The required number is given by checking the Temple of Time pedestal as adult.
 
-## Bombchus in Logic
+## Bombchus Are Considered in Logic
 
 With this setting active, Bombchus are considered part of the seed's logic.
 
@@ -51,60 +51,60 @@ The impact on your seed are the following :
 - Every pack of chus in shops (included the carpenter guy in the Wastelands) can be buyed as child
 - You can find chu drops in the bushes
 
-## Boss Shuffle
+## Shuffle Boss Entrances: Full
 
 Bosses are mixed between them. To give you an example: you can find Volvagia in the Water Temple.
 
 Important note : Path hints will always be for the bosses, even if they're not in their vanilla location.
 
-## Closed Door Of Time (DoT)
+## Closed Door of Time
 
 The Doors of Time are closed, making time travel impossible without having Ocarina and Song of Time.
 
-## Double Damage
+## Damage Multiplier: Double
 
 Ennemies deal twice more damages. This rule is also applied if you fall into the void.
 
-## Half Damage
+## Damage Multiplier: Half
 
 Ennemies deal twice less damages. This rule is also applied if you fall into the void.
 
-## Free Scarecrow
+## Free Scarecrow's Song
 
 No need to go to Lake Hylia as child, then as Adult to unlock Pierre the Scarecrow.
 Pulling out your Ocarina near a scarecrow spot will automatically make him appear.
 
-## Keysy
+## Small Keys: Keysy
 
 All small key are delete from the game, meaning that you can explore all dungeons with far less requirements.
 
-## No CTMC (Chest Texture Matches Content)
+## Chest Appearance Matches Contents: Off
 
 Chest's texture are vanilla (gold chest for Boss Keys and classic chest for the rest).
 
 No impact on chest's size.
 
-## One Major Item per Dungeon
+## Dungeons Have One Major Item
 
 All dungeons will have only one major item. You can find a list of all items that are considered major [here](https://wiki.ootrandomizer.com/index.php?title=Major_Items).
 
-## Open Deku
+## Forest: Open Forest
 
 The Kokiri Sword requirement for Deku Tree access is removed.
 
-## Open Fountain
+## Zora's Foutain: Always Open
 
 You can access Zora Fountain no matter the time period you're in without giving the Ruto's Letter to King Zora (mweep).
 
 The Ruto's Letter item will be replaced by an empty bottle in the item poll.
 
-## Open Fortress
+## Gerudo's Fortress: Open Gerudo's Fortress
 
 The Gerudo Valley bridge is repaired right from the beginning of the seed.
 
 If the "Shuffle Gerudo Card" setting is not active alongside this one, you'll also have the Gerudo Card in your inventory. Otherwise, it's the Gerudo Card reward that will be given to you (can be a major item ... check your inventory before starting your seed!)
 
-## Shop Sanity Random
+## Shopsanity Random
 
 Items in shops are shuffled. Here are the impact you'll have to consider in your seed :
 
@@ -112,26 +112,26 @@ Items in shops are shuffled. Here are the impact you'll have to consider in your
 - Price range will be between 0 and 300 rupees
 - A third wallet is added into the item poll. Having all three wallet increase the max amount to 999 rupees.
 
-## Skull Sanity Dungeons
+## Tokensanity: Dungeons Only
 
 Gold Skultullas tokens which are in dungeons will give a random object instead.
 
-## Random Starting Age
+## Starting Age: Random
 
 The seed can start as child or as Adult. Usually, you can have this information in the file selection inventory by checking the Master Sword icon.
 
-## Random Spawn
+## Randomize Overworld Spawns
 
 Child and Adult spawn locations are completelly random.
 With this setting active, you can open the Gerudo Fortress door (the one granting access to the Wastelands) on both sides
 
-## Reachable Location : Required only
+## Guarantee Reachable Locations: Required Only
 
 All locations might not be accessible if they are't needed for seed's progression.
 
 Keys or progression items location can be locked by themselve if not mandatory to finish your seed.
 
-## Shuffle Beans
+## Shuffle Magic Beans
 
 Beans are shuffled and can be found as a pack. The beans salesman you will you only once a random item for 60 rupees.
 
@@ -143,7 +143,7 @@ Link's House cow is becoming an always hint with this setting enabled.
 
 You can find all cows location [here](https://wiki.ootrandomizer.com/index.php?title=Cows).
 
-## Shuffle Dungeons Entrance
+## Shuffle Dungeon Entrances
 
 Dungeons are mixed between them.
 Important notes :
@@ -151,7 +151,7 @@ Important notes :
 - Fire Temple entrance is accessible as a child. Bolero is still required.
 - Deku and Bottom of the Well can be accessed as adult if thir entrance have been opened as child
 
-## Shuffle Simple Indoor Entrances
+## Shuffle Interior Entrances: Simple Interiors
 
 Indoor entrances are mixed between them.
 
@@ -167,20 +167,20 @@ Medigoron (the one in Goron City who usually sells the Giant's Knife) and the Ca
 
 Each of those check have a cost of 200 rupees.
 
-## Shuffle Ocarina
+## Shuffle Ocarinas
 
 Both ocarinas are shuffled.
 Ocarina of Time item hint becomes an always hint with this setting enables (always with the Song of Time hint)
 
 > The treasure thrown by princess Zelda is ...
 
-## Shuffle Scrubs (affordable)
+## Scrub Shuffle: Affordable
 
 All item given by scrubs are random as long as you have 10 rupees to spend.
 
 Scrubs location are listed in [this page](https://wiki.ootrandomizer.com/index.php?title=Scrubs).
 
-## Songsanity (anywhere)
+## Shuffle Songs: Anywhere
 
 Songs are not mixed between them. They're part of the item poll, meaning that you can find song in chests for example.
 
