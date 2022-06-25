@@ -2,13 +2,16 @@ import fs from "fs";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
+import LinkRenderer from "components/Markdown/LinkRenderer";
 
 const WikiContentPage = ({ ...props }) => {
   return (
     <>
       <h1>{props.title}</h1>
       <main>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
+          a: LinkRenderer
+        }}>
           {props.markdownBody}
         </ReactMarkdown>
       </main>
