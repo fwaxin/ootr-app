@@ -8,17 +8,12 @@ export const menuRoutes: MenuRoute = [
     startIcon: <HomeOutlined fontSize="small" />,
   },
   {
-    name: "Leaderboard",
-    href: "/leaderboard",
-    startIcon: <EmojiEventsOutlined fontSize="small" />,
-  },
-  {
     name: "Wiki",
     startIcon: <LibraryBooksOutlined fontSize="small" />,
     routes: [
       {
-        name: "Markdown test file",
-        href: "/wiki/dummy"
+        name: "Shuffle Setting Summary",
+        href: "/wiki/lightShuffle"
       }
     ]
   },
