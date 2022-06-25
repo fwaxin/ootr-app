@@ -68,7 +68,7 @@ const MyAccount: FC = () => {
                     <Typography variant="body1">
                       {`${user.username} #${user.discriminator}`}
                     </Typography>
-                    <Typography variant="body2">OoTR role to add</Typography>
+                    <Typography variant="body2" color="text.disabled">{user.profile || "No role attributed yet"}</Typography>
                   </Box>
                 </Box>
                 <Divider />
