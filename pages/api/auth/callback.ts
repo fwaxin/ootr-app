@@ -63,8 +63,16 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           "No e-mail linked to this account. Make sure everything is correctly set up in your account."
         );
     }
+
+    const ladderProfile = await fetch(
+      `${process.env.APP_DOMAIN}/api/profile/${userData.username}-${userData.discriminator}`
+    ).then((res) => res.json());
+
+    const {id, avatarUrl, ...cleanedLladderProfile} = ladderProfile;
+
     req.session.user = {
       ...userData,
+      ...cleanedLladderProfile,
       accessToken: tokenData.access_token,
       refreshToken: tokenData.refresh_token,
     } as User;
@@ -72,6 +80,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     res.redirect("/?r=true");
   } catch (e) {
+    console.error("Discord call request failed with given error : ", e);
     res.redirect("/?r=false");
   }
 }
