@@ -155,6 +155,12 @@ Important notes :
 
 Indoor entrances are mixed between them.
 
+## Shuffle Grotto Entrances
+
+Grotto entrances are mixed between them.
+
+You can find a list of all grottos in the game in [this page](https://wiki.ootrandomizer.com/index.php?title=Grottos).
+
 ## Shuffle Gerudo Card
 
 The Gerudo Card is Shuffled ans the captive carpenters can give you any item.
@@ -184,6 +190,10 @@ Scrubs location are listed in [this page](https://wiki.ootrandomizer.com/index.p
 
 Songs are not mixed between them. They're part of the item poll, meaning that you can find song in chests for example.
 
+## Cucco Count
+
+With this setting enabled, the required number of cuccoes to validate the Anju's Chickens check is randomized.
+
 ___
 
-For more informations, check [the official Ocarina of Time Randomizer Wiki](https://wiki.ootrandomizer.com/index.php?title=Scrubs)!
+For more informations, check [the official Ocarina of Time Randomizer Wiki](https://wiki.ootrandomizer.com/index.php?title=Main_Page)!
