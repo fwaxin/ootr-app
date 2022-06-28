@@ -11,6 +11,18 @@ export type User = {
   profile?: string;
 };
 
+export type LeaderBoard = {
+  userId?: number,
+  userName: string;
+  userDiscordName: string;
+  startingElo: number;
+  currentElo: number;
+  nbRaces: number;
+  nbVictories: number;
+  nbDefeats: number;
+  nbDraws: number;
+}[];
+
 export type DiscordAPIResponse = {
   error?: any;
   error_description?: string;

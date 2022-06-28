@@ -3,9 +3,11 @@ import { FC, PropsWithChildren } from "react";
 import {
   alpha,
   AppBar,
+  Box,
   Container,
   Divider,
   Toolbar,
+  Typography,
 } from "@mui/material";
 
 import AppMenu from "components/AppMenu";
@@ -19,12 +21,21 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       <AppBar
         color="transparent"
         elevation={0}
-        sx={{
+        style={{
           backgroundColor: alpha("#ffffff", 0.6),
           backdropFilter: "blur(20px)",
         }}
       >
         <Toolbar sx={{ height: TOPBAR_HEIGHT }}>
+          <Box
+            display="flex"
+            alignItems="flex-start"
+            justifyContent="center"
+            flexDirection="column"
+            mr={2}
+          >
+            <Typography variant="h6">OoTR Ladder</Typography>
+          </Box>
           <AppMenu routes={menuRoutes} />
           <MyAccount />
         </Toolbar>
@@ -32,9 +43,9 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       </AppBar>
       <Container
         maxWidth="xl"
-        sx={{
-          pt: `${TOPBAR_HEIGHT}px`,
-          pb: 4,
+        style={{
+          paddingTop: `${TOPBAR_HEIGHT}px`,
+          paddingBottom: 4,
           minHeight: `calc(100vh - ${TOPBAR_HEIGHT}px - 1px)`,
         }}
       >
