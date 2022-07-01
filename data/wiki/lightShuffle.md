@@ -80,9 +80,7 @@ All small key are delete from the game, meaning that you can explore all dungeon
 
 ## Chest Appearance Matches Contents: Off
 
-Chest's texture are vanilla (gold chest for Boss Keys and classic chest for the rest).
-
-No impact on chest's size.
+Chest's texture and size are vanilla.
 
 ## Dungeons Have One Major Item
 
@@ -92,7 +90,7 @@ All dungeons will have only one major item. You can find a list of all items tha
 
 The Kokiri Sword requirement for Deku Tree access is removed.
 
-## Zora's Foutain: Always Open
+## Zora's Fountain: Always Open
 
 You can access Zora Fountain no matter the time period you're in without giving the Ruto's Letter to King Zora (mweep).
 
