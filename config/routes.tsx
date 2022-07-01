@@ -8,6 +8,11 @@ export const menuRoutes: MenuRoute = [
     startIcon: <HomeOutlined fontSize="small" />,
   },
   {
+    name: "Leaderboard",
+    href: "/leaderboard",
+    startIcon: <EmojiEventsOutlined fontSize="small" />,
+  },
+  {
     name: "Wiki",
     startIcon: <LibraryBooksOutlined fontSize="small" />,
     routes: [
