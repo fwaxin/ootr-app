@@ -11,8 +11,14 @@ export type User = {
   profile?: string;
 };
 
+export type Schedule = {
+  sessionId: number;
+  start: Date;
+  ladderType: string;
+}[];
+
 export type LeaderBoard = {
-  userId?: number,
+  userId?: number;
   userName: string;
   userDiscordName: string;
   startingElo: number;
