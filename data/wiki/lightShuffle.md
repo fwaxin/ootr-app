@@ -34,7 +34,7 @@ The required number is given by checking the Temple of Time pedestal as adult.
 
 In order to unlock access to the Trials, you have to gather the Light Arrows along with the Spirit and Shadow Medallions.
 
-Important to notice : with this setting active, the Light Arrows' position will be added as an always hint and "Way of the Hero" hint are replaced by "Path of Bridge" hints.
+Important to notice : with this setting active, a "Path of Evil's Bane" will always be available, replacing one of the other paths and leading to the Light Arrows.
 
 ### Dungeon Rewards
 
