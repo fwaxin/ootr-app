@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         <>
           {leaderboardData.length === 0 ? (
             <Alert variant="outlined" severity="warning">
-              No data has been found the the given category
+              No data has been found the given category
             </Alert>
           ) : (
             <TableContainer>
