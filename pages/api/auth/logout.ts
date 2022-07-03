@@ -6,7 +6,6 @@ import { DiscordAPIResponse } from "../../../types";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const accessToken = req.session.user?.accessToken;
-  console.log(accessToken);
   if (!accessToken) {
     return res.status(403).redirect("/403");
   }
