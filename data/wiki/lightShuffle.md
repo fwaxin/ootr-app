@@ -1,9 +1,7 @@
 ---
-title: Shuffle League Settings Summary
+title: Wiki Settings Shuffle
 author: zorro275
 ---
-
-# Wiki Settings Shuffle
 
 Here are all the settings that can be picked on seed generation along with their given impact on what to excpect on your aventure!
 
