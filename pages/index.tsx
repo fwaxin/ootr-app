@@ -36,66 +36,81 @@ const Home: NextPage = () => {
         <Grid container>
           <Grid item container xs={12} md={6}>
             <Stack spacing={3} sx={{ width: "100%" }}>
-              {schedule?.map((scheduleItem) => {
-                return (
-                  <Grid
-                    key={`session-${scheduleItem.ladderType}-${scheduleItem.sessionId}`}
-                    item
-                    xs={12}
-                  >
-                    <Card
-                      elevation={3}
-                      sx={{
-                        px: 3,
-                        py: 2,
-                        width: "100%",
-                        overflow: "hidden",
-                        position: "relative",
-                      }}
+              {schedule
+                ?.sort((sessionA, sessionB) =>
+                  sessionA.sessionId === sessionB.sessionId
+                    ? sessionA.sessionId > sessionB.sessionId
+                      ? 1
+                      : -1
+                    : 0
+                )
+                .map((scheduleItem) => {
+                  return (
+                    <Grid
+                      key={`session-${scheduleItem.ladderType}-${scheduleItem.sessionId}`}
+                      item
+                      xs={12}
                     >
-                      <CardContent
+                      <Card
+                        elevation={3}
                         sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "flex-end",
+                          px: 3,
+                          py: 2,
+                          width: "100%",
+                          overflow: "hidden",
+                          position: "relative",
                         }}
                       >
-                        <Box>
-                          <Typography
-                            variant="h6"
-                            textTransform="uppercase"
-                            lineHeight={1}
-                            color={colors.blue[700]}
-                          >
-                            {LADDER_CAT_READABLE_NAME[scheduleItem.ladderType]}
-                          </Typography>
-                          <Typography variant="overline" lineHeight={1}>
-                            {formatInTimeZone(
-                              new Date(scheduleItem.start),
-                              "UTC",
-                              "MM/dd/yyyy - H'h'mm"
-                            )} UTC
-                          </Typography>
-                        </Box>
-                        <Box>
-                          <Countdown deadline={new Date(scheduleItem.start)} />
-                        </Box>
-                      </CardContent>
-                      <TimerOutlined
-                        sx={{
-                          fontSize: 85,
-                          color: colors.blue[50],
-                          position: "absolute",
-                          right: 0,
-                          bottom: 0,
-                          transform: "translate(25%, 25%)",
-                          zIndex: 0,
-                        }}
-                      />
-                    </Card>
-                  </Grid>
-                );
-              })}
+                        <CardContent
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "flex-end",
+                          }}
+                        >
+                          <Box>
+                            <Typography
+                              variant="h6"
+                              textTransform="uppercase"
+                              lineHeight={1}
+                              color={colors.blue[700]}
+                            >
+                              {
+                                LADDER_CAT_READABLE_NAME[
+                                  scheduleItem.ladderType
+                                ]
+                              }
+                            </Typography>
+                            <Typography variant="overline" lineHeight={1}>
+                              {formatInTimeZone(
+                                new Date(scheduleItem.start),
+                                "UTC",
+                                "MM/dd/yyyy - H'h'mm"
+                              )}{" "}
+                              UTC
+                            </Typography>
+                          </Box>
+                          <Box>
+                            <Countdown
+                              deadline={new Date(scheduleItem.start)}
+                            />
+                          </Box>
+                        </CardContent>
+                        <TimerOutlined
+                          sx={{
+                            fontSize: 85,
+                            color: colors.blue[50],
+                            position: "absolute",
+                            right: 0,
+                            bottom: 0,
+                            transform: "translate(25%, 25%)",
+                            zIndex: 0,
+                          }}
+                        />
+                      </Card>
+                    </Grid>
+                  );
+                })}
             </Stack>
           </Grid>
         </Grid>
