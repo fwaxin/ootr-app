@@ -43,9 +43,9 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       </AppBar>
       <Container
         maxWidth="xl"
-        style={{
-          paddingTop: `${TOPBAR_HEIGHT}px`,
-          paddingBottom: 4,
+        sx={{
+          marginTop: `${TOPBAR_HEIGHT}px`,
+          py: 6,
           minHeight: `calc(100vh - ${TOPBAR_HEIGHT}px - 1px)`,
         }}
       >

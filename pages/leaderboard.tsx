@@ -13,13 +13,17 @@ import {
 import useSWR from "swr";
 
 import { LeaderBoard } from "types";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const { data: leaderboardData } = useSWR<LeaderBoard>("/api/leaderboard/");
 
   return (
     <>
-      <Typography variant="h2" component="h1" my={3}>
+      <Head>
+        <title>OoTR Ladder - Leaderboard</title>
+      </Head>
+      <Typography variant="h2" component="h1" mb={3}>
         Leaderboard
       </Typography>
       {!leaderboardData ? (

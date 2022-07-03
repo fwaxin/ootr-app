@@ -18,13 +18,17 @@ import { zonedTimeToUtc, formatInTimeZone } from "date-fns-tz";
 
 import { LADDER_CAT_READABLE_NAME } from "constant";
 import Countdown from "components/Countdown";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const { data: schedule } = useSWR<Schedule>("/api/schedule/");
 
   return (
     <>
-      <Typography variant="h2" component="h1" my={3}>
+      <Head>
+        <title>OoTR Ladder - Schedule</title>
+      </Head>
+      <Typography variant="h2" component="h1" mb={3}>
         Schedule
       </Typography>
 
