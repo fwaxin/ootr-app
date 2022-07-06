@@ -112,7 +112,7 @@ Items in shops are shuffled. Here are the impact you'll have to consider in your
 
 ## Tokensanity: Dungeons Only
 
-Gold Skultullas tokens which are in dungeons will give a random object instead.
+Token Rewards from gold skultullas in dungeons are shuffled into the pool. 
 
 ## Starting Age: Random
 
