@@ -38,7 +38,7 @@ const Home: NextPage = () => {
             <Stack spacing={3} sx={{ width: "100%" }}>
               {schedule
                 ?.sort((sessionA, sessionB) =>
-                  sessionA.sessionId === sessionB.sessionId
+                  sessionA.sessionId !== sessionB.sessionId
                     ? sessionA.sessionId > sessionB.sessionId
                       ? 1
                       : -1
