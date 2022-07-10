@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-const LinkRenderer:FC = (props: any) => {
+const LinkRenderer: FC = (props: any) => {
   return (
     <a href={props.href} target="_blank" rel="noreferrer">
       {props.children}

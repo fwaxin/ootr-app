@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { AccountCircle, Login, Settings } from "@mui/icons-material";
+import { AccountCircle, Login, Settings } from '@mui/icons-material';
 import {
   Avatar,
   Box,
@@ -14,13 +14,13 @@ import {
   MenuList,
   Popover,
   Typography,
-} from "@mui/material";
-import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
+} from '@mui/material';
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import Link from 'next/link';
 
-import useUser from "hooks/useUser";
-import Link from "next/link";
+import useUser from 'hooks/useUser';
 
-import DiscordIcon from "./Icons/DiscordIcon";
+import DiscordIcon from './Icons/DiscordIcon';
 
 const MyAccount: FC = () => {
   const { user } = useUser({});
@@ -41,20 +41,20 @@ const MyAccount: FC = () => {
               <Popover
                 {...bindPopover(accountMenu)}
                 anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
+                  vertical: 'bottom',
+                  horizontal: 'right',
                 }}
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+                  vertical: 'top',
+                  horizontal: 'right',
                 }}
                 sx={{
-                  "& .MuiPopover-paper": {
+                  '& .MuiPopover-paper': {
                     width: 300,
                   },
                 }}
               >
-                <Box display="flex" p={2} sx={{ alignItems: "center" }}>
+                <Box display="flex" p={2} sx={{ alignItems: 'center' }}>
                   {user.avatar ? (
                     <Avatar
                       alt={`${user.username}'s avatar`}
@@ -65,10 +65,10 @@ const MyAccount: FC = () => {
                     <AccountCircle />
                   )}
                   <Box ml={1}>
-                    <Typography variant="body1">
-                      {`${user.username} #${user.discriminator}`}
+                    <Typography variant="body1">{`${user.username} #${user.discriminator}`}</Typography>
+                    <Typography variant="body2" color="text.disabled">
+                      {user.profile || 'No role attributed yet'}
                     </Typography>
-                    <Typography variant="body2" color="text.disabled">{user.profile || "No role attributed yet"}</Typography>
                   </Box>
                 </Box>
                 <Divider />
@@ -104,11 +104,7 @@ const MyAccount: FC = () => {
         </PopupState>
       ) : (
         <Link href="/api/auth/login" passHref>
-          <Button
-            variant="outlined"
-            color="inherit"
-            startIcon={<DiscordIcon fontSize="small" />}
-          >
+          <Button variant="outlined" color="inherit" startIcon={<DiscordIcon fontSize="small" />}>
             Login with Discord
           </Button>
         </Link>

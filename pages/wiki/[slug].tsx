@@ -1,11 +1,13 @@
-import Head from "next/head";
-import fs from "fs";
-import matter from "gray-matter";
-import remarkGfm from "remark-gfm";
-import ReactMarkdown from "react-markdown";
-import LinkRenderer from "components/Markdown/LinkRenderer";
-import { formatInTimeZone } from "date-fns-tz";
-import { Container, Typography } from "@mui/material";
+import fs from 'fs';
+
+import { Container, Typography } from '@mui/material';
+import { formatInTimeZone } from 'date-fns-tz';
+import matter from 'gray-matter';
+import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
+import LinkRenderer from 'components/Markdown/LinkRenderer';
 
 const WikiContentPage = ({ ...props }) => {
   return (
@@ -18,12 +20,7 @@ const WikiContentPage = ({ ...props }) => {
           {props.title}
         </Typography>
         <Typography variant="overline">
-          Last update:{" "}
-          {formatInTimeZone(
-            new Date(props.lastModifiedDate),
-            "UTC",
-            "MM/dd/yyyy - H'h'mm 'UTC'"
-          )}
+          Last update: {formatInTimeZone(new Date(props.lastModifiedDate), 'UTC', "MM/dd/yyyy - H'h'mm 'UTC'")}
         </Typography>
         <main>
           <ReactMarkdown
@@ -64,10 +61,10 @@ export const getStaticProps = async ({ ...context }) => {
 };
 
 export const getStaticPaths = async () => {
-  const wikiFiles = await fs.readdirSync("data/wiki");
+  const wikiFiles = await fs.readdirSync('data/wiki');
   const filePaths = wikiFiles.map((fileName) => ({
     params: {
-      slug: fileName.replace(/\.md$/, ""),
+      slug: fileName.replace(/\.md$/, ''),
     },
   }));
 
