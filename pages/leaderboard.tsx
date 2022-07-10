@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import {
   Alert,
   CircularProgress,
@@ -9,14 +8,15 @@ import {
   TableHead,
   TableRow,
   Typography,
-} from "@mui/material";
-import useSWR from "swr";
+} from '@mui/material';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import useSWR from 'swr';
 
-import { LeaderBoard } from "types";
-import Head from "next/head";
+import { LeaderBoard } from 'types';
 
 const Home: NextPage = () => {
-  const { data: leaderboardData } = useSWR<LeaderBoard>("/api/leaderboard/");
+  const { data: leaderboardData } = useSWR<LeaderBoard>('/api/leaderboard/');
 
   return (
     <>

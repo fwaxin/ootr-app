@@ -1,25 +1,26 @@
-import { EmojiEventsOutlined, HomeOutlined, LibraryBooksOutlined } from "@mui/icons-material";
-import { MenuRoute } from "types";
+import { EmojiEventsOutlined, HomeOutlined, LibraryBooksOutlined } from '@mui/icons-material';
+
+import { MenuRoute } from 'types';
 
 export const menuRoutes: MenuRoute = [
   {
-    name: "Home",
-    href: "/",
+    name: 'Home',
+    href: '/',
     startIcon: <HomeOutlined fontSize="small" />,
   },
   {
-    name: "Leaderboard",
-    href: "/leaderboard",
+    name: 'Leaderboard',
+    href: '/leaderboard',
     startIcon: <EmojiEventsOutlined fontSize="small" />,
   },
   {
-    name: "Wiki",
+    name: 'Wiki',
     startIcon: <LibraryBooksOutlined fontSize="small" />,
     routes: [
       {
-        name: "Shuffle Setting Summary",
-        href: "/wiki/lightShuffle"
-      }
-    ]
+        name: 'Shuffle Setting Summary',
+        href: '/wiki/lightShuffle',
+      },
+    ],
   },
 ];

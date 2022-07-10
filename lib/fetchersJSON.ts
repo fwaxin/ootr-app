@@ -1,10 +1,7 @@
-export default async function fetchJson<JSON = unknown>(
-  input: RequestInfo,
-  init?: RequestInit,
-): Promise<JSON> {
+export default async function fetchJson<JSON = unknown>(input: RequestInfo, init?: RequestInit): Promise<JSON> {
   const response = await fetch(input, init);
   const data = await response.json();
-  
+
   if (response.ok) {
     return data;
   }
@@ -38,7 +35,7 @@ export class FetchError extends Error {
       Error.captureStackTrace(this, FetchError);
     }
 
-    this.name = "FetchError";
+    this.name = 'FetchError';
     this.response = response;
     this.data = data ?? { message: message };
   }

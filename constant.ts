@@ -3,7 +3,7 @@
 export const TOPBAR_HEIGHT: number = 64;
 
 export const LADDER_CAT_READABLE_NAME: any = {
-  lightShuffle: "Shuffle (light)",
+  lightShuffle: 'Shuffle (light)',
 };
 
 export const ONE_DAY = 60 * 60 * 24;

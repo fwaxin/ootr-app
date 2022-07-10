@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import Link from "next/link";
+import { Button, ListItemText, MenuItem, MenuList, Stack } from '@mui/material';
+import PopupState, { bindHover, bindPopover } from 'material-ui-popup-state';
+import HoverPopover from 'material-ui-popup-state/HoverPopover';
+import Link from 'next/link';
 
-import { MenuRoute } from "types";
-import { Button, ListItemText, MenuItem, MenuList, Stack } from "@mui/material";
-import HoverPopover from "material-ui-popup-state/HoverPopover";
-import PopupState, { bindHover, bindPopover } from "material-ui-popup-state";
+import { MenuRoute } from 'types';
 
 interface AppMenuProps {
   routes: MenuRoute;
@@ -25,38 +25,30 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
             <PopupState variant="popover" popupId={`menuPopup-${name}`}>
               {(popupState) => (
                 <>
-                  <Button
-                    key={`menuItem-${index}-${name}`}
-                    {...routeProps}
-                    {...bindHover(popupState)}
-                  >
+                  <Button key={`menuItem-${index}-${name}`} {...routeProps} {...bindHover(popupState)}>
                     {name}
                   </Button>
                   <HoverPopover
                     {...bindPopover(popupState)}
                     anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "left",
+                      vertical: 'bottom',
+                      horizontal: 'left',
                     }}
                     transformOrigin={{
-                      vertical: "top",
-                      horizontal: "left",
+                      vertical: 'top',
+                      horizontal: 'left',
                     }}
                     sx={{
-                      "& .MuiPopover-paper": {
+                      '& .MuiPopover-paper': {
                         minWidth: 150,
                       },
                     }}
                   >
                     <MenuList dense>
                       {routes.map((subRoute) => {
-                        const {name, href, ...subRouteProps} = subRoute;
+                        const { name, href, ...subRouteProps } = subRoute;
                         return (
-                          <Link
-                            key={`menuItem-${index}-${name}`}
-                            href={href as string}
-                            passHref
-                          >
+                          <Link key={`menuItem-${index}-${name}`} href={href as string} passHref>
                             <MenuItem>
                               <ListItemText>{name}</ListItemText>
                             </MenuItem>
