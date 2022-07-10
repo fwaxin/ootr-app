@@ -1,20 +1,22 @@
 import { FC, PropsWithChildren } from 'react';
 
-import { alpha, AppBar, Box, Container, Divider, Toolbar, Typography } from '@mui/material';
+import { alpha, AppBar, Box, Container, Divider, Toolbar, Typography, useTheme } from '@mui/material';
 
 import MyAccount from 'components/Account';
 import AppMenu from 'components/AppMenu';
+import ThemeSwitcher from 'components/ThemeSwitcher';
 import { menuRoutes } from 'config/routes';
 import { TOPBAR_HEIGHT } from 'constant';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
+  const theme = useTheme();
   return (
     <>
       <AppBar
         color="transparent"
         elevation={0}
-        style={{
-          backgroundColor: alpha('#ffffff', 0.6),
+        sx={{
+          backgroundColor: alpha(theme.palette.background.default, 0.6),
           backdropFilter: 'blur(20px)',
         }}
       >
@@ -23,6 +25,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
             <Typography variant="h6">OoTR Ladder</Typography>
           </Box>
           <AppMenu routes={menuRoutes} />
+          <ThemeSwitcher />
           <MyAccount />
         </Toolbar>
         <Divider />

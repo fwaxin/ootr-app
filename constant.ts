@@ -1,3 +1,14 @@
+import { Key } from 'react';
+
+import { PaletteMode } from '@mui/material';
+
+// Theme related constants
+
+export const THEMES: Record<Key, PaletteMode> = {
+  LIGHT: 'light',
+  DARK: 'dark',
+};
+
 // Layout related constants
 
 export const TOPBAR_HEIGHT: number = 64;
