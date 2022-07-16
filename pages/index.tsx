@@ -1,11 +1,13 @@
 import { TimerOutlined } from '@mui/icons-material';
 import { Alert, Box, Card, CardContent, colors, Grid, Stack, Typography } from '@mui/material';
+import { differenceInSeconds } from 'date-fns';
 import { formatInTimeZone } from 'date-fns-tz';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import useSWR from 'swr';
 
 import Countdown from 'components/Countdown';
+import Timer from 'components/Timer';
 import { LADDER_CAT_READABLE_NAME } from 'constant';
 import { Schedule } from 'types';
 
@@ -62,7 +64,11 @@ const Home: NextPage = () => {
                             </Typography>
                           </Box>
                           <Box>
-                            <Countdown deadline={new Date(scheduleItem.start)} />
+                            {differenceInSeconds(new Date(), new Date(scheduleItem.start)) > 0 ? (
+                              <Timer startDate={new Date(scheduleItem.start)} />
+                            ) : (
+                              <Countdown deadline={new Date(scheduleItem.start)} />
+                            )}
                           </Box>
                         </CardContent>
                         <TimerOutlined
