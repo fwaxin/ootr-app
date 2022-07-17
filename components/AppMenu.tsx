@@ -22,10 +22,10 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
           </Link>
         ) : (
           routes && (
-            <PopupState variant="popover" popupId={`menuPopup-${name}`}>
+            <PopupState key={`menuItem-${index}-${name}`} variant="popover" popupId={`menuPopup-${name}`}>
               {(popupState) => (
                 <>
-                  <Button key={`menuItem-${index}-${name}`} {...routeProps} {...bindHover(popupState)}>
+                  <Button {...routeProps} {...bindHover(popupState)}>
                     {name}
                   </Button>
                   <HoverPopover
