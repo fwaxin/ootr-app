@@ -6,7 +6,7 @@ import useSWR from 'swr';
 import { User } from '../types';
 
 export default function useUser({ redirectTo = '', redirectIfFound = false } = {}) {
-  const { data: user, mutate: mutateUser } = useSWR<User>('/api/user/');
+  const { data: user, error, mutate: mutateUser } = useSWR<User>('/api/user/');
 
   useEffect(() => {
     if (!redirectTo || !user) return;
@@ -16,5 +16,5 @@ export default function useUser({ redirectTo = '', redirectIfFound = false } = {
     }
   }, [user, redirectIfFound, redirectTo]);
 
-  return { user, mutateUser };
+  return { user, isLoading: !error && !user, isError: error, mutateUser };
 }
