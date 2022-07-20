@@ -84,7 +84,16 @@ Chest's texture and size are vanilla.
 
 ## Dungeons Have One Major Item
 
-All dungeons will have only one major item. You can find a list of all items that are considered major [here](https://wiki.ootrandomizer.com/index.php?title=Major_Items).
+All dungeons will have only one major item.
+Depending on other potential settings enabled, this setting can have multiple interpretations :
+
+- Spirit Temple hands count as part of the dungeon. Moreover, in order to match vanilla distribution, Spirit Temple has **two** major items.
+- Depending on the Keysanity settings you might have, Boss Keys, Fortress Keys and small keys can be considered as major items (only if dedicated Keysanity setting is set to *anywhere*)
+- Gold Skulltula tokens are considered "major" if either Rainbow Bridge or Ganon's Boss Key requirements are set to "GS Tokens"
+- Heart Containers and Pieces of Heart are considered "major" if either Rainbow Bridge or Ganon's Boss Key requirements are set to "Hearts"
+- Bombchus are considered "major" only if they are considered in logic
+
+You can find a list of all items that are considered major [here](https://wiki.ootrandomizer.com/index.php?title=Major_Items).
 
 ## Forest: Open Forest
 
