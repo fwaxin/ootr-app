@@ -1,32 +1,32 @@
 import { FC } from 'react';
 
 import { AccountCircle, Login, Settings } from '@mui/icons-material';
-import {
-  Avatar,
-  Box,
-  Button,
-  CircularProgress,
-  Divider,
-  IconButton,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
-  MenuList,
-  Popover,
-  Typography,
-} from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Link from 'next/link';
 
+import useHasMounted from 'hooks/useHasMounted';
 import useUser from 'hooks/useUser';
 
 import DiscordIcon from './Icons/DiscordIcon';
 
 const MyAccount: FC = () => {
+  const hasComponentBeenMounted = useHasMounted();
   const { user, isLoading } = useUser({});
 
-  return isLoading ? (
+  return !hasComponentBeenMounted ? null : isLoading ? (
     <Box sx={{ p: 1 }}>
       <CircularProgress size={36} />
     </Box>
@@ -74,7 +74,7 @@ const MyAccount: FC = () => {
                 </Typography>
               </Box>
             </Box>
-            <Divider />
+            {/* <Divider />
             <MenuList dense>
               <MenuItem disabled href="#">
                 <ListItemIcon>
@@ -94,7 +94,7 @@ const MyAccount: FC = () => {
                   Coming soon
                 </Typography>
               </MenuItem>
-            </MenuList>
+            </MenuList> */}
             <Divider />
             <MenuList>
               <Link href="/api/auth/logout">

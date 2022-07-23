@@ -1,16 +1,25 @@
 import { FC, PropsWithChildren } from 'react';
 
-import { alpha, AppBar, Box, Container, Divider, Toolbar, Typography, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { alpha } from '@mui/system';
 
 import MyAccount from 'components/Account';
 import AppMenu from 'components/AppMenu';
 import ThemeSwitcher from 'components/ThemeSwitcher';
 import { menuRoutes } from 'config/routes';
 import { TOPBAR_HEIGHT } from 'constant';
+import useHasMounted from 'hooks/useHasMounted';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
+  const hasComponentBeenMounted = useHasMounted();
   const theme = useTheme();
-  return (
+  return !hasComponentBeenMounted ? null : (
     <>
       <AppBar
         color="transparent"

@@ -1,10 +1,15 @@
 import { FC } from 'react';
 
-import { Button, ListItemText, MenuItem, MenuList, Stack } from '@mui/material';
+import Button from '@mui/material/Button';
+import ListItemText from '@mui/material/ListItemText';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
+import Stack from '@mui/material/Stack';
 import PopupState, { bindHover, bindPopover } from 'material-ui-popup-state';
 import HoverPopover from 'material-ui-popup-state/HoverPopover';
 import Link from 'next/link';
 
+import useHasMounted from 'hooks/useHasMounted';
 import { MenuRoute } from 'types';
 
 interface AppMenuProps {
@@ -12,7 +17,9 @@ interface AppMenuProps {
 }
 
 const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
-  return (
+  const hasComponentBeenMounted = useHasMounted();
+
+  return !hasComponentBeenMounted ? null : (
     <Stack direction="row" spacing={1} flexGrow={1}>
       {props.routes.map((routeItem, index) => {
         const { name, routes, href, ...routeProps } = routeItem;
