@@ -1,6 +1,7 @@
 import { createContext, FC, ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { PaletteMode, ThemeProvider, useMediaQuery } from '@mui/material';
+import add from 'date-fns/add';
 import { useCookie } from 'react-use';
 
 import { createAppTheme, LadderPaletteMode } from 'theme';
@@ -25,7 +26,7 @@ const CustomThemeProvider: FC<CustomThemeProviderProps> = ({ children }) => {
     () => ({
       setColorMode: (option: PaletteMode) => {
         setSelectedTheme(option);
-        updateThemeInMemory(option);
+        updateThemeInMemory(option, { expires: add(new Date(), { years: 1 }) });
       },
     }),
     [],
