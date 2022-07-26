@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-import { AccountCircle, Login, Settings } from '@mui/icons-material';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import Login from '@mui/icons-material/Login';
+import Settings from '@mui/icons-material/Settings';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';

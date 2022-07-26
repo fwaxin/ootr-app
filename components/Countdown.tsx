@@ -35,10 +35,14 @@ const Countdown: FC<CountdownProps> = ({ deadline }) => {
   const countdown = useMemo(getCountdown, [currentDateTime]);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       const now = getTime(new Date());
       setCurrentDateTime(now);
     }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

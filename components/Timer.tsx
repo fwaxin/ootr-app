@@ -37,10 +37,14 @@ const Timer: FC<TimerProps> = ({ startDate }) => {
   const timer = useMemo(getTimer, [currentTime]);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       const now = getTime(new Date());
       setCurrentTime(now);
     }, 10);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

@@ -1,4 +1,6 @@
-import { EmojiEventsOutlined, HomeOutlined, LibraryBooksOutlined } from '@mui/icons-material';
+import EmojiEventsOutlined from '@mui/icons-material/EmojiEventsOutlined';
+import HomeOutlined from '@mui/icons-material/HomeOutlined';
+import LibraryBooksOutlined from '@mui/icons-material/LibraryBooksOutlined';
 
 import { MenuRoute } from 'types';
 

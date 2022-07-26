@@ -4,13 +4,13 @@ const nextConfig = {
   images: {
     domains: ['cdn.discordapp.com'],
   },
-  webpack: function(config) {
+  webpack: function (config) {
     config.module.rules.push({
       test: /\.md$/i,
       type: 'asset/source',
     });
-    return config
-  }
-}
+    return config;
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
