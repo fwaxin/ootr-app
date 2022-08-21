@@ -1,54 +1,26 @@
 import { FC, PropsWithChildren } from 'react';
 
-import { useTheme } from '@mui/material';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { alpha } from '@mui/system';
+import { Disclosure } from '@headlessui/react';
 
 import MyAccount from 'components/Account';
 import AppMenu from 'components/AppMenu';
-import ThemeSwitcher from 'components/ThemeSwitcher';
-import { menuRoutes } from 'config/routes';
-import { TOPBAR_HEIGHT } from 'constant';
-import useHasMounted from 'hooks/useHasMounted';
+
+import { menuRoutes } from '../config/routes';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-  const hasComponentBeenMounted = useHasMounted();
-  const theme = useTheme();
-  return !hasComponentBeenMounted ? null : (
+  return (
     <>
-      <AppBar
-        color="transparent"
-        elevation={0}
-        sx={{
-          backgroundColor: alpha(theme.palette.background.default, 0.6),
-          backdropFilter: 'blur(20px)',
-        }}
+      <Disclosure
+        as="nav"
+        className="fixed w-full backdrop-blur-md bg-white/30 border-b-[1px] border-slate-100 z-[1500]"
       >
-        <Toolbar sx={{ height: TOPBAR_HEIGHT }}>
-          <Box display="flex" alignItems="flex-start" justifyContent="center" flexDirection="column" mr={2}>
-            <Typography variant="h6">OoTR Ladder</Typography>
-          </Box>
+        <div className="flex items-center h-16">
+          <div className="px-2 sm:px-6 lg:px-8">OoTR Ladder</div>
           <AppMenu routes={menuRoutes} />
-          <ThemeSwitcher />
           <MyAccount />
-        </Toolbar>
-        <Divider />
-      </AppBar>
-      <Container
-        maxWidth="xl"
-        sx={{
-          marginTop: `${TOPBAR_HEIGHT}px`,
-          py: 6,
-          minHeight: `calc(100vh - ${TOPBAR_HEIGHT}px - 1px)`,
-        }}
-      >
-        {children}
-      </Container>
+        </div>
+      </Disclosure>
+      <div className="container pt-20 px-8">{children}</div>
     </>
   );
 };

@@ -50,12 +50,12 @@ const Countdown: FC<CountdownProps> = ({ deadline }) => {
       {!countdown ? (
         <></>
       ) : (
-        <Typography variant="overline" lineHeight={1}>
+        <span className="uppercase text-2xl font-extrabold text-sky-600/20 select-none">
           {countdown.days > 0 && `${countdown.days}d `}
           {countdown.hours > 0 && `${countdown.hours.toString().padStart(2, '0')}h `}
           {countdown.minutes >= 0 && `${countdown.minutes.toString().padStart(2, '0')}m `}
           {countdown.seconds.toString().padStart(2, '0')}s
-        </Typography>
+        </span>
       )}
     </>
   );
