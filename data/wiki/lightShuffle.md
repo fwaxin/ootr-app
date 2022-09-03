@@ -45,9 +45,10 @@ With this setting active, Bombchus are considered part of the seed's logic.
 The impact on your seed are the following :
 
 - The first pack of Chus you'll find, no matter the location, will always be 20
-- You can check Bombchu Bowling is you have found Chus
+- You can check Bombchu Bowling only if you have found Chus
 - Every pack of chus in shops (included the carpenter guy in the Wastelands) can be buyed as child
 - You can find chu drops in the bushes
+- With this setting active, buying a chus pack from carpetman in Haunted Wasteland is in logic and can be the first pack in logic (it is still a 10 pack)
 
 ## Shuffle Boss Entrances: Full
 
