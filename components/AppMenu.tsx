@@ -40,7 +40,7 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
           <Menu key={routeItem.name}>
             <div className="relative">
               <Menu.Button>
-                <div className="text-slate-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <div className="inline-flex items-center text-slate-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   {routeItem.startIcon && <span className="inline-block w-5 mr-2">{routeItem.startIcon}</span>}
                   {routeItem.name}
                 </div>
