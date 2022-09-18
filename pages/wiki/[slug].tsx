@@ -1,27 +1,28 @@
 import fs from 'fs';
 
-import { Container, Typography } from '@mui/material';
 import { formatInTimeZone } from 'date-fns-tz';
 import matter from 'gray-matter';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-import LinkRenderer from 'components/Markdown/LinkRenderer';
+import LinkRenderer from 'components/markdown/LinkRenderer';
 
 const WikiContentPage = ({ ...props }) => {
+  const pageTitle = props.title;
   return (
     <>
       <Head>
-        <title>OoTR Ladder - {props.title}</title>
+        <title>OoTR Ladder - {pageTitle}</title>
       </Head>
-      <Container maxWidth="md">
-        <Typography variant="h2" component="h1" lineHeight={1}>
+      <div className="prose mx-auto prose-h1:my-4">
+        <h1>
           {props.title}
-        </Typography>
-        <Typography variant="overline">
-          Last update: {formatInTimeZone(new Date(props.lastModifiedDate), 'UTC', "MM/dd/yyyy - H'h'mm 'UTC'")}
-        </Typography>
+          <p className="uppercase text-slate-400 text-xs">
+            Last update: {formatInTimeZone(new Date(props.lastModifiedDate), 'UTC', "MM/dd/yyyy - H'h'mm 'UTC'")}
+          </p>
+        </h1>
+
         <main>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
@@ -32,7 +33,7 @@ const WikiContentPage = ({ ...props }) => {
             {props.markdownBody}
           </ReactMarkdown>
         </main>
-      </Container>
+      </div>
     </>
   );
 };

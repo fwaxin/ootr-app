@@ -50,10 +50,10 @@ const Timer: FC<TimerProps> = ({ startDate }) => {
   return (
     <>
       {timer && (
-        <Typography variant="overline" lineHeight={1}>
+        <span className="uppercase text-2xl font-extrabold text-sky-600/20 select-none">
           {timer.hours.toString().padStart(1, '0')}:{timer.minutes.toString().padStart(2, '0')}:
           {timer.seconds.toString().padStart(2, '0')}.{timer.milliseconds.toString().slice(0, 2)}
-        </Typography>
+        </span>
       )}
     </>
   );

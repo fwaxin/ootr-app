@@ -1,118 +1,82 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Login from '@mui/icons-material/Login';
-import Settings from '@mui/icons-material/Settings';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
-import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
-import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import { Menu, Transition } from '@headlessui/react';
+import Image from 'next/image';
 import Link from 'next/link';
 
-import useHasMounted from 'hooks/useHasMounted';
+import MenuLink from 'components/common/MenuLink';
+import DiscordIcon from 'components/icons/DiscordIcon';
 import useUser from 'hooks/useUser';
 
-import DiscordIcon from './Icons/DiscordIcon';
-
 const MyAccount: FC = () => {
-  const hasComponentBeenMounted = useHasMounted();
   const { user, isLoading } = useUser({});
 
-  return !hasComponentBeenMounted ? null : isLoading ? (
-    <Box sx={{ p: 1 }}>
-      <CircularProgress size={36} />
-    </Box>
-  ) : user && Object.keys(user).length > 0 ? (
-    <PopupState variant="popover" popupId="my-account-menu">
-      {(accountMenu) => (
-        <>
-          <IconButton {...bindTrigger(accountMenu)}>
-            <Avatar
-              alt={`${user.username}'s avatar`}
+  return (
+    <div className="pr-2 sm:pr-6 lg:pr-8">
+      {isLoading ? (
+        <>Loading ...</>
+      ) : user && Object.keys(user).length > 0 ? (
+        <Menu as="div" className="relative">
+          <Menu.Button className="flex rounded-full focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2 focus:ring-offset-white">
+            <div className="sr-only">Open user menu</div>
+            <Image
+              className="rounded-full"
+              alt={user.username}
               src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
-              sx={{ width: 36, height: 36 }}
+              width={36}
+              height={36}
             />
-          </IconButton>
-          <Popover
-            {...bindPopover(accountMenu)}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            sx={{
-              '& .MuiPopover-paper': {
-                width: 300,
-              },
-            }}
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
           >
-            <Box display="flex" p={2} sx={{ alignItems: 'center' }}>
-              {user.avatar ? (
-                <Avatar
-                  alt={`${user.username}'s avatar`}
-                  src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
-                  sx={{ width: 36, height: 36 }}
-                />
-              ) : (
-                <AccountCircle />
-              )}
-              <Box ml={1}>
-                <Typography variant="body1">{`${user.username} #${user.discriminator}`}</Typography>
-                <Typography variant="body2" color="text.disabled">
-                  {user.profile || 'No role attributed yet'}
-                </Typography>
-              </Box>
-            </Box>
-            {/* <Divider />
-            <MenuList dense>
-              <MenuItem disabled href="#">
-                <ListItemIcon>
-                  <AccountCircle fontSize="small" />
-                </ListItemIcon>
-                <ListItemText>Profile</ListItemText>
-                <Typography variant="overline" color="primary">
-                  Coming soon
-                </Typography>
-              </MenuItem>
-              <MenuItem disabled href="#">
-                <ListItemIcon>
-                  <Settings fontSize="small" />
-                </ListItemIcon>
-                <ListItemText>Settings</ListItemText>
-                <Typography variant="overline" color="primary">
-                  Coming soon
-                </Typography>
-              </MenuItem>
-            </MenuList> */}
-            <Divider />
-            <MenuList>
-              <Link href="/api/auth/logout">
-                <MenuItem>Logout</MenuItem>
-              </Link>
-            </MenuList>
-          </Popover>
-        </>
+            <Menu.Items className="absolute right-0 mt-2 w-80 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  <MenuLink href="#">
+                    <div className="flex items-center">
+                      <Image
+                        className="rounded-full"
+                        alt={user.username}
+                        src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
+                        width={40}
+                        height={40}
+                      />
+                      <div className="ml-4 grow">
+                        <p className="block">{`${user.username}#${user.discriminator}`}</p>
+                        <p className="inline-block p-1 uppercase text-[10px] leading-[10px] font-semibold rounded-full bg-emerald-100 text-emerald-600">
+                          {user.profile || 'No role attributed yet'}
+                        </p>
+                      </div>
+                    </div>
+                  </MenuLink>
+                </Menu.Item>
+              </div>
+              <div className="px-1 py-1">
+                <Menu.Item>
+                  <MenuLink href="/api/auth/logout">Log out</MenuLink>
+                </Menu.Item>
+              </div>
+            </Menu.Items>
+          </Transition>
+        </Menu>
+      ) : (
+        <Link href="/api/auth/login" passHref>
+          <a className="inline-flex items-center rounded-md px-3 py-2 text-sm text-white font-medium bg-[#5865F2]">
+            <span className="inline-block w-5 mr-2">
+              <DiscordIcon />
+            </span>
+            Sign in
+          </a>
+        </Link>
       )}
-    </PopupState>
-  ) : (
-    <Link href="/api/auth/login" passHref>
-      <Button variant="outlined" color="inherit" startIcon={<DiscordIcon fontSize="small" />}>
-        Login with Discord
-      </Button>
-    </Link>
+    </div>
   );
 };
 
