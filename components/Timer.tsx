@@ -1,6 +1,5 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 
-import Typography from '@mui/material/Typography';
 import differenceInMilliseconds from 'date-fns/differenceInMilliseconds';
 import getTime from 'date-fns/getTime';
 

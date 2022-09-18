@@ -1,23 +1,22 @@
-import EmojiEventsOutlined from '@mui/icons-material/EmojiEventsOutlined';
-import HomeOutlined from '@mui/icons-material/HomeOutlined';
-import LibraryBooksOutlined from '@mui/icons-material/LibraryBooksOutlined';
-
+import BookIcon from 'components/icons/BookIcon';
+import HomeIcon from 'components/icons/HomeIcon';
+import TrophyIcon from 'components/icons/TrophyIcon';
 import { MenuRoute } from 'types';
 
 export const menuRoutes: MenuRoute = [
   {
     name: 'Home',
     href: '/',
-    startIcon: <HomeOutlined fontSize="small" />,
+    startIcon: <HomeIcon />,
   },
   {
     name: 'Leaderboard',
     href: '/leaderboard',
-    startIcon: <EmojiEventsOutlined fontSize="small" />,
+    startIcon: <TrophyIcon />,
   },
   {
     name: 'Wiki',
-    startIcon: <LibraryBooksOutlined fontSize="small" />,
+    startIcon: <BookIcon />,
     routes: [
       {
         name: 'Shuffle Setting Summary',
