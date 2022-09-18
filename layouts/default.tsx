@@ -4,6 +4,7 @@ import { Disclosure } from '@headlessui/react';
 
 import MyAccount from 'components/Account';
 import AppMenu from 'components/AppMenu';
+import ThemeSwitcher from 'components/ThemeSwitcher';
 
 import { menuRoutes } from '../config/routes';
 
@@ -17,6 +18,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
         <div className="flex items-center h-16">
           <div className="px-2 sm:px-6 lg:px-8">OoTR Ladder</div>
           <AppMenu routes={menuRoutes} />
+          <ThemeSwitcher />
           <MyAccount />
         </div>
       </Disclosure>

@@ -4,7 +4,7 @@ import formatInTimeZone from 'date-fns-tz/formatInTimeZone';
 
 import Countdown from 'components/Countdown';
 import Timer from 'components/Timer';
-import { LADDER_CAT_READABLE_NAME } from 'constant';
+import { LADDER_CAT_READABLE_NAME } from 'config/appConfig';
 
 interface SessionSummaryProps {
   sessionId: number;

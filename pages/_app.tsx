@@ -1,5 +1,5 @@
+import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
 import { SWRConfig } from 'swr';
 
 import Layout from 'layouts/default';
@@ -18,9 +18,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           },
         }}
       >
-        <Layout {...pageProps}>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider attribute="class">
+          <Layout {...pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </SWRConfig>
     </>
   );
