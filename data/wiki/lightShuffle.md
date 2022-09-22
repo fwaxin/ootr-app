@@ -122,9 +122,9 @@ Items in shops are shuffled. Here are the impact you'll have to consider in your
 
 Token Rewards from gold skultullas in dungeons are shuffled into the pool. 
 
-## Starting Age: Random
+## Starting Age: Child
 
-The seed can start as child or as Adult. Usually, you can have this information in the file selection inventory by checking the Master Sword icon.
+You start the seed as Child.
 
 ## Randomize Overworld Spawns
 
