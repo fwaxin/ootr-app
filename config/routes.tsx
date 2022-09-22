@@ -11,8 +11,17 @@ export const menuRoutes: MenuRoute = [
   },
   {
     name: 'Leaderboard',
-    href: '/leaderboard',
     startIcon: <TrophyIcon />,
+    routes: [
+      {
+        name: 'Standard leaderboard',
+        href: '/leaderboard/standard',
+      },
+      {
+        name: '[ARCHIVE] Light Shuffle leaderboard',
+        href: '/leaderboard/lightShuffle',
+      },
+    ],
   },
   {
     name: 'Wiki',
