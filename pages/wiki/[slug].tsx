@@ -15,10 +15,10 @@ const WikiContentPage = ({ ...props }) => {
       <Head>
         <title>OoTR Ladder - {pageTitle}</title>
       </Head>
-      <div className="prose mx-auto prose-h1:my-4">
+      <div className="prose mx-auto prose-h1:my-4 dark:prose-invert">
         <h1>
           {props.title}
-          <p className="uppercase text-slate-400 text-xs">
+          <p className="uppercase text-xs text-slate-400">
             Last update: {formatInTimeZone(new Date(props.lastModifiedDate), 'UTC', "MM/dd/yyyy - H'h'mm 'UTC'")}
           </p>
         </h1>

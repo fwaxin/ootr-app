@@ -35,7 +35,11 @@ const ThemeSwitcher: FC = () => {
               : index + 1 === APP_THEME_CONF.length
               ? 'rounded-r-md border'
               : 'border-t border-b'
-          } border-gray-200 hover:bg-gray-100 text-slate-700 bg-white hover:text-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600`}
+          } border-gray-200 dark:border-gray-400 ${
+            theme === themeName
+              ? 'bg-emerald-500 text-white'
+              : 'text-slate-700 dark:text-white hover:text-emerald-500 dark:hover:text-emerald-500'
+          }`}
         >
           <span className="inline-block w-5">{icon}</span>
         </button>

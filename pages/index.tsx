@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         <div className="flex w-1/2">
           {onGoingSessionList && onGoingSessionList?.length > 0 && (
             <div className="flex flex-col w-full">
-              <div className="prose prose-slate prose-headings:my-4">
+              <div className="prose prose-slate prose-headings:my-4 dark:prose-invert">
                 <h2>Session(s) in progress</h2>
               </div>
               <div className="w-full flex flex-col gap-6">
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
           )}
           {comingSessionList && comingSessionList?.length > 0 && (
             <div className="flex flex-col w-full">
-              <div className="prose prose-slate prose-headings:my-4">
+              <div className="prose prose-slate prose-headings:my-4 dark:prose-invert">
                 <h2>Schedule</h2>
               </div>
               <div className="w-full flex flex-col gap-6">
