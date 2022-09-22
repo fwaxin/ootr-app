@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <Head>
         <title>OoTR Ladder - Leaderboard</title>
       </Head>
-      <div className="prose prose-slate prose-headings:my-4">
+      <div className="prose prose-slate prose-headings:my-4 dark:prose-invert">
         <h1>Leaderboard</h1>
       </div>
       {!leaderboardData ? (

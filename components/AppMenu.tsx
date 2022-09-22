@@ -28,8 +28,8 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
             <a
               className={`inline-flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
                 router.asPath === routeItem.href || router.pathname === routeItem.href
-                  ? 'text-white bg-slate-700'
-                  : 'text-slate-700 hover:bg-gray-700 hover:text-white'
+                  ? 'text-white bg-slate-700 dark:bg-white dark:text-slate-700'
+                  : 'text-slate-700 hover:bg-gray-700 hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-slate-700'
               }`}
             >
               {routeItem.startIcon && <span className="inline-block w-5 mr-2">{routeItem.startIcon}</span>}
@@ -40,7 +40,7 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
           <Menu key={routeItem.name}>
             <div className="relative">
               <Menu.Button>
-                <div className="inline-flex items-center text-slate-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <div className="inline-flex items-center 'text-slate-700 hover:bg-gray-700 hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-slate-700 px-3 py-2 rounded-md text-sm font-medium">
                   {routeItem.startIcon && <span className="inline-block w-5 mr-2">{routeItem.startIcon}</span>}
                   {routeItem.name}
                 </div>
@@ -54,7 +54,7 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white dark:bg-slate-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="px-1 py-1">
                     {routeItem.routes?.map((childRouteItem) => (
                       <Menu.Item key={childRouteItem.name}>
