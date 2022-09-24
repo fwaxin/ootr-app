@@ -29,7 +29,7 @@ export const menuRoutes: MenuRoute = [
     routes: [
       {
         name: 'Shuffle Setting Summary',
-        href: '/wiki/lightShuffle',
+        href: '/wiki/shuffle',
       },
     ],
   },
