@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
 import { useTheme } from 'next-themes';
-import { useMountedState } from 'react-use';
 
 import { APP_THEME_CONF } from 'config/appConfig';
+import useHasMounted from 'hooks/useHasMounted';
 
 const ThemeSwitcher: FC = () => {
   const { theme, setTheme } = useTheme();
-  const isMounted = useMountedState();
+  const isMounted = useHasMounted();
 
   const setAppTheme = (e: any, appTheme: string) => {
     e.preventDefault();
