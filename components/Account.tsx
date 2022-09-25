@@ -12,7 +12,7 @@ const MyAccount: FC = () => {
   const { user, isLoading } = useUser({});
 
   return (
-    <div className="pr-2 sm:pr-6 lg:pr-8">
+    <div>
       {isLoading ? (
         <>Loading ...</>
       ) : user && Object.keys(user).length > 0 ? (
