@@ -35,7 +35,7 @@ const ThemeSwitcher: FC = () => {
               : index + 1 === APP_THEME_CONF.length
               ? 'rounded-r-md border'
               : 'border-t border-b'
-          } border-gray-200 dark:border-gray-400 ${
+          } border-slate-100 dark:border-slate-700 ${
             theme === themeName
               ? 'bg-emerald-500 text-white'
               : 'text-slate-700 dark:text-white hover:text-emerald-500 dark:hover:text-emerald-500'

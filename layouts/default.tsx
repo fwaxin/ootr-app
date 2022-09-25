@@ -11,18 +11,14 @@ import { menuRoutes } from '../config/routes';
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
-      <Disclosure
-        as="nav"
-        className="fixed w-full backdrop-blur-md bg-white/30 dark:bg-gray-900/60 border-b-[1px] border-slate-100 z-[1500]"
-      >
-        <div className="flex items-center h-16">
-          <div className="px-2 sm:px-6 lg:px-8">OoTR Ladder</div>
+      <nav className="fixed w-screen bg-white/30 dark:bg-gray-900/60 border-b-[1px] border-slate-100 dark:border-slate-700 z-[1500]">
+        <div className="px-6 lg:px-8 flex items-center h-16 before:content-[''] before:absolute before:inset-0  before:backdrop-blur before:-z-10">
           <AppMenu routes={menuRoutes} />
           <ThemeSwitcher />
           <MyAccount />
         </div>
-      </Disclosure>
-      <div className="container pt-20 px-8">{children}</div>
+      </nav>
+      <div className="container pt-20 px-8 min-h-[100vh]">{children}</div>
     </>
   );
 };

@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           <p>No session planned</p>
         </div>
       ) : (
-        <div className="flex w-1/2">
+        <div className="flex w-full lg:w-1/2">
           {onGoingSessionList && onGoingSessionList?.length > 0 && (
             <div className="flex flex-col w-full">
               <div className="prose prose-slate prose-headings:my-4 dark:prose-invert">
