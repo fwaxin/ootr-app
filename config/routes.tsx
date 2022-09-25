@@ -18,6 +18,10 @@ export const menuRoutes: MenuRoute = [
         href: '/leaderboard/standard',
       },
       {
+        name: 'Shuffle leaderboard',
+        href: '/leaderboard/shuffle',
+      },
+      {
         name: '[ARCHIVE] Light Shuffle leaderboard',
         href: '/leaderboard/lightShuffle',
       },
