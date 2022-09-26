@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               <div className="w-full flex flex-col gap-6">
                 {onGoingSessionList
                   .sort((sessionA, sessionB) =>
-                    sessionA.sessionId !== sessionB.sessionId ? (sessionA.sessionId > sessionB.sessionId ? 1 : -1) : 0,
+                    sessionA.sessionId !== sessionB.sessionId ? (sessionA.start > sessionB.start ? 1 : -1) : 0,
                   )
                   .map((scheduleItem) => {
                     return (
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
               <div className="w-full flex flex-col gap-6">
                 {comingSessionList
                   .sort((sessionA, sessionB) =>
-                    sessionA.sessionId !== sessionB.sessionId ? (sessionA.sessionId > sessionB.sessionId ? 1 : -1) : 0,
+                    sessionA.sessionId !== sessionB.sessionId ? (sessionA.start > sessionB.start ? 1 : -1) : 0,
                   )
                   .map((scheduleItem) => {
                     return (
