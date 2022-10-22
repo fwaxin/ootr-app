@@ -18,7 +18,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
           <MyAccount />
         </div>
       </nav>
-      <div className="container pt-20 px-8 min-h-[100vh]">{children}</div>
+      <div className="container pt-20 pb-8 px-8 min-h-[100vh]">{children}</div>
     </>
   );
 };
