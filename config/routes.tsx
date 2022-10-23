@@ -1,4 +1,5 @@
 import BookIcon from 'components/icons/BookIcon';
+import DiscordIcon from 'components/icons/DiscordIcon';
 import HomeIcon from 'components/icons/HomeIcon';
 import TrophyIcon from 'components/icons/TrophyIcon';
 import { MenuRoute } from 'types';
@@ -23,6 +24,7 @@ export const menuRoutes: MenuRoute = [
       },
       {
         name: '[ARCHIVE] Light Shuffle leaderboard',
+        newTab: true,
         href: '/leaderboard/lightShuffle',
       },
     ],
@@ -36,5 +38,14 @@ export const menuRoutes: MenuRoute = [
         href: '/wiki/shuffle',
       },
     ],
+  },
+];
+
+export const ressourcesLinkList: MenuRoute = [
+  {
+    name: 'Join our Discord server !',
+    href: 'https://discord.gg/yXzzR8mdaf',
+    newTab: true,
+    startIcon: <DiscordIcon />,
   },
 ];

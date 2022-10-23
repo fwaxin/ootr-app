@@ -161,13 +161,14 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
       </div>
       {props.routes.map((routeItem) =>
         routeItem.href ? (
-          <Link key={routeItem.name} href={routeItem.href as string}>
+          <Link key={routeItem.name} href={routeItem.href as string} passHref>
             <a
               className={`inline-flex items-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${
                 router.asPath === routeItem.href || router.pathname === routeItem.href
                   ? 'text-white bg-slate-700 dark:bg-white dark:text-slate-700'
                   : 'text-slate-700 hover:bg-gray-700 hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-slate-700'
               }`}
+              target={routeItem.newTab ? '_blank' : '_self'}
             >
               {routeItem.startIcon && <span className="inline-block w-5 mr-2">{routeItem.startIcon}</span>}
               {routeItem.name}
@@ -195,7 +196,9 @@ const AppMenu: FC<AppMenuProps> = ({ ...props }) => {
                   <div className="px-1 py-1">
                     {routeItem.routes?.map((childRouteItem) => (
                       <Menu.Item key={childRouteItem.name}>
-                        <MenuLink href={childRouteItem.href}>{childRouteItem.name}</MenuLink>
+                        <MenuLink href={childRouteItem.href} newTab={childRouteItem.newTab}>
+                          {childRouteItem.name}
+                        </MenuLink>
                       </Menu.Item>
                     ))}
                   </div>
