@@ -42,6 +42,7 @@ export type DiscordAPIResponse = {
 export type MenuRoute = {
   name: string;
   href?: string;
+  newTab?: boolean;
   startIcon?: JSX.Element;
   routes?: MenuRoute;
 }[];
